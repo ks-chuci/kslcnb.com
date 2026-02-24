@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站创建平台 - 自定义网站内容</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-globe"></i>
+                <span>WebsiteBuilder.com</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="dashboard.html">我的网站</a>
+                <a href="#features">功能</a>
+                <a href="#pricing">定价</a>
+                <a href="dashboard.html" class="btn-primary">开始创建</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>创建您自己的<span class="highlight">.com</span>网站</h1>
+            <p>无需编码经验，可视化编辑，在线编程，一键发布</p>
+            <div class="cta-buttons">
+                <a href="dashboard.html" class="btn-large">免费开始</a>
+                <a href="#demo" class="btn-outline">查看演示</a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h3>在线编程</h3>
+                    <p>内置HTML/CSS/JavaScript编辑器，实时预览</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>可视化编辑</h3>
+                    <p>拖拽式界面，无需编码即可创建专业网站</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>一键发布</h3>
+                    <p>即时发布到yourname.websitebuilder.com</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>实时修改</h3>
+                    <p>随时编辑和更新您的网站内容</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo">
+            <h2>实时演示</h2>
+            <div class="demo-container">
+                <div class="demo-editor">
+                    <h3><i class="fas fa-edit"></i> 编辑器</h3>
+                    <textarea id="demo-code" placeholder="输入HTML代码...">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的网站</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        h1 { color: #3498db; }
+    </style>
+</head>
+<body>
+    <h1>欢迎来到我的网站！</h1>
+    <p>这是通过WebsiteBuilder.com创建的网站。</p>
+    <button onclick="alert('Hello!')">点击测试</button>
+</body>
+</html></textarea>
+                    <button onclick="updateDemoPreview()" class="btn-primary">更新预览</button>
+                </div>
+                <div class="demo-preview">
+                    <h3><i class="fas fa-eye"></i> 实时预览</h3>
+                    <iframe id="preview-frame"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WebsiteBuilder.com - 丙午马年新春快乐</p>
+        <p>轻松创建、编程和发布您的网站</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 初始化演示预览
+        function updateDemoPreview() {
+            const code = document.getElementById('demo-code').value;
+            const iframe = document.getElementById('preview-frame');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+            iframeDoc.open();
+            iframeDoc.write(code);
+            iframeDoc.close();
+        }
+        
+        // 页面加载时初始化预览
+        window.onload = updateDemoPreview;
+    </script>
+</body>
+</html>
